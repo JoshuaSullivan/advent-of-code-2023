@@ -8,8 +8,13 @@ import UIKit
 let input = try DataParser<String>().parseLines(fileName: "input")
 
 //: Then pass the data to the solver, along with any parameterization:
-//let result = Solver.solve(input: input)
-//print("First:", result)
+let result = Solver.solve(input: input)
+print("First:", result)
+
+let secondResult = Solver.solveSecondReversedRegex(input: input)
+print("Second:", secondResult)
+
+print("\n--------------\n")
 
 let reverseRegex = {
     let t = CACurrentMediaTime()

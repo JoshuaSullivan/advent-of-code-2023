@@ -77,8 +77,7 @@ public struct Solver {
                 }
                 return nil
             }
-            let lineValues = lineMatches.map { value(for: $0) }
-            return lineValues.first! * 10 + lineValues.last!
+            return value(for: lineMatches.first!) * 10 + value(for: lineMatches.last!)
         }
         
         return lineDigits.reduce(0, +)
