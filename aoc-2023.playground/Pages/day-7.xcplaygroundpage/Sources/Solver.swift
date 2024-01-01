@@ -1,8 +1,29 @@
 import Foundation
 
 public struct Solver {
-    // Implement your solving algoritm here. I reocmmend accepting data as an input to the function so you can
-    // run the examples as well as the real challenge.
+    public static func solveFirst(input: [Wager]) -> Int {
+        let sortedWagers = input.sorted()
+        return sortedWagers.enumerated()
+            .map { index, wager in
+                let i = index + 1
+//                print(i, wager.hand, wager.bid, (wager.bid * i))
+                return wager.bid * i
+            }
+            .reduce(0, +)
+    }
     
-    // public static func solve(data: [[Int]]) -> Int
+    public static func solveSecond(rawData: String) -> Int {
+        let wagers = rawData
+            .split(separator: "\n")
+            .compactMap { Wager(withJokers: String($0)) }
+        print(wagers)
+        let sortedWagers = wagers.sorted()
+        return sortedWagers.enumerated()
+            .map { index, wager in
+                let i = index + 1
+                print(i, wager.hand, wager.bid, (wager.bid * i))
+                return wager.bid * i
+            }
+            .reduce(0, +)
+    }
 }

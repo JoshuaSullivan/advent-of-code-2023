@@ -1,8 +1,11 @@
 import Foundation
 
 public struct Solver {
-    // Implement your solving algoritm here. I reocmmend accepting data as an input to the function so you can
-    // run the examples as well as the real challenge.
+    public static func solveFirst(seeds: [Int], sequence: MapSequence) -> Int {
+        seeds.map { sequence.mapping($0) }.min()!
+    }
     
-    // public static func solve(data: [[Int]]) -> Int
+    public static func solveSecond(seeds: [Int], sequence: MapSequence) -> Int {
+        return 0
+    }
 }
